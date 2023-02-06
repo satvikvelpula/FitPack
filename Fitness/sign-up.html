@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="design.css">
+    <title>Sign-up web</title>
+</head>
+<body>
+
+    <!-- bar design starts here -->
+    <div class="bar">
+        <div class="logo"></div>
+        <div class="bar-link">
+            <a href="">
+                <h2>Log in</h2>
+            </a>
+        </div>
+    </div>
+    <!-- bar design ends heere -->
+
+    <!-- side bar design starts here -->
+    <div id="left-bar" class="side-bar">
+        <div class="side-bar-header-one">
+            <a href="">
+                <h3>About</h3>
+            </a>
+        </div>
+        <div class="side-bar-header-two">
+            <a href="">
+                <h3>Services</h3>
+            </a>
+        </div>
+        <div class="side-bar-header-three">
+            <a href="">
+                <h3>Clients</h3>
+            </a>
+        </div>
+        <div class="side-bar-header-four">
+            <a href="">
+                <h3>Contact</h3>
+            </a>
+        </div>
+    </div>
+    <!-- side bar design ends here -->
+
+    <!-- main design starts here -->
+    <div id="main" class="main">
+        <!-- header design starts here -->
+        <div class="header">
+            <div class="side-bar-menu">
+                <div onclick="leftBar(this)" class="clicking">
+                    <div class="menu-one"></div>
+                    <div class="menu-two"></div>
+                    <div class="menu-three"></div>
+                </div>
+            </div>
+        </div>
+        <div class="content"></div>
+        <div class="sign-up"></div>
+    </div>
+    <!-- header design ends here -->
+
+    <div class="idk">
+        <button onclick="drop()" class="button">Click here!</button>
+        <div id="drop-down" class="button-link">
+            <a href="">Link 1</a>
+            <a href="">Link 2</a>
+            <a href="">Link 3</a>
+        </div>
+    </div>
+    <!-- drop-down menu test ends here -->
+
+    <!-- <div class="moremore"></div> -->
+
+    <script>
+        let date = new Date();
+        let time = date.getHours + ":" + date.getMinutes + ":" + date.getSeconds 
+        console.log(time);
+
+
+        function drop() {
+            document.getElementById("drop-down").classList.toggle("show"); // click animation
+        }
+
+        function leftBar(x) {
+            document.getElementById("left-bar").classList.toggle("left-bar-anim");
+            document.getElementById("main").classList.toggle("main-anim");
+            x.classList.toggle("close");
+        }
+
+    </script>
+
+</body>
+</html>
