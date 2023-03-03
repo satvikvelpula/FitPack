@@ -1,0 +1,102 @@
+<html>
+<head>
+    <link rel="stylesheet" href="AddWorkoutstyle.css">
+	<title>Shuffable Text Example</title>
+	<style>
+
+		#shuffle-text {
+			display: inline-block;
+		}
+		#shuffle-text span {
+			display: inline-block;
+			position: relative;
+			animation-name: shuffle;
+			animation-duration: 5s;
+			animation-iteration-count: infinite;
+			animation-timing-function: linear;
+		}
+		#shuffle-text span::before {
+			content: attr(data-char);
+			position: absolute;
+			top: 0;
+			left: 0;
+			opacity: 0;
+			transition: opacity 30s;
+		}
+		#shuffle-text span:hover::before {
+			opacity: 1;
+		}
+		@keyframes shuffle {
+			0% {
+				transform: none;
+			}
+			100% {
+				transform: translateY(-100%);
+			}
+		}
+	</style>
+</head>
+<body>
+	<h1>Calisthenics</h1>
+
+	<div id="myDIV" class="header">
+		<h2>My To Do List</h2>
+		<input type="text" id="myInput" placeholder="Title...">
+		<span onclick="newElement()" class="addBtn">Add</span>
+	  </div>
+	  
+	  <ul id="myUL">
+		<li class="chceked">Hit the Gym</li>
+		<li>Train Arms</li>
+		<li>Train Legs</li>
+		<li>Train Chest</li>
+		<li>Train Back</li>
+		<li>Train Shoulders</li>
+		<li>Train Abs</li>
+	  </ul>
+
+    <h1>Random Arms Exercise</h1>
+    <div id="container">
+        <button id="btn">New Exercise!</button>
+		<p class="textbox" id="output" style="padding: 10px; border: 7px solid #5B0F0F;">Press To Generate Exercise</p>
+    </div>
+
+	<h1>Random Legs Exercise</h1>
+    <div id="container2">
+        <button id="btn2">New Exercise!</button>
+        <p class="textbox" id="output2" style="padding: 10px; border: 7px solid #5B0F0F;">Press To Generate Exercise</p>
+    </div>
+
+	<h1>Random Chest Exercise</h1>
+    <div id="container3">
+        <button id="btn3">New Exercise!</button>
+        <p class="textbox" id="output3" style="padding: 10px; border: 7px solid #5B0F0F;">Press To Generate Exercise</p>
+    </div>
+
+	<h1>Random Back Exercise</h1>
+    <div id="container4">
+        <button id="btn4">New Exercise!</button>
+        <p class="textbox" id="output4" style="padding: 10px; border: 7px solid #5B0F0F;">Press To Generate Exercise</p>
+    </div>
+
+	<h1>Random Shoulder Exercise</h1>
+    <div id="container5">
+        <button id="btn5">New Exercise!</button>
+        <p class="textbox" id="output5" style="padding: 10px; border: 7px solid #5B0F0F;">Press To Generate Exercise</p>
+    </div>
+
+	<h1>Random Ab Exercise</h1>
+    <div id="container6">
+        <button id="btn6">New Exercise!</button>
+        <p class="textbox" id="output6" style="padding: 10px; border: 7px solid #5B0F0F;">Press To Generate Exercise</p>
+    </div>
+
+	<h1>Random Amount Of Sets</h1>
+    <div id="container7">
+        <button id="btn7">New Amount Of Sets!</button>
+        <p class="textbox" id="output7" style="padding: 10px; border: 7px solid #5B0F0F;">Press To Generate Exercise</p>
+    </div>
+
+    <script src="CalisthenicsShuffleScript.js"></script>
+</body>
+</html>
