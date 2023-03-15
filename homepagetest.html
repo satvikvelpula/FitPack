@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="homepagestyles.css">
+    <script src="https://kit.fontawesome.com/2ed076f63b.js" crossorigin="anonymous"></script>
+    <title>FitPack | Home</title>
+</head>
+
+<body>
+
+    <div class="bar">
+        <div class="logo"></div>
+
+<!-- second bar menu  -->
+
+        <div class="bar-menu" id="bar-menu">
+            <div onclick="bar_menu()" class="bar-menu-hover" id="bar-menu-hover">
+                <div class="bar-menu-one"></div>
+                <div class="bar-menu-two"></div>
+            </div>
+        </div>
+
+    </div>
+
+<!-- down bar -->
+    <div class="down-bar" id="down-bar">
+        <div class = "down-menu-icon1" id="down-menu-icon2">
+            <a href = "homepage.html">
+                <i class="fa-regular fa-address-card"></i> 
+            </a>
+        </div> 
+        <div class="down-menu-icon2">
+            <a href="">
+                <i class="fa-solid fa-user-plus"></i>
+            </a>
+        </div>
+        <div class="down-menu-icon3">
+            <a href="">
+                <i class="fa-solid fa-user-pen"></i>
+            </a>
+        </div>
+    </div>
+
+
+    <!-- side bar button starts here -->
+
+    <div class="side-bar-menu" id="side-bar-menu">
+        <div onclick="side_bar(this)" class="menu-hover">
+            <div class="menu-one"></div>
+            <div class="menu-two"></div>
+        </div>
+    </div>
+
+    <!-- side bar button ends here -->
+
+<!--- -------- ------------------------->
+
+                
+    <!-- actual side bar starts here -->
+
+    <div class="side-bar" id="side-bar">
+
+        <div class="side-bar-header-one">
+            <a href="#">
+                <i class="fa-regular fa-address-card" ></i>
+            </a>
+        </div>
+        <div class="side-bar-header-two">
+            <a href="">
+                <i class="fa-solid fa-user-plus"></i>
+            </a>
+        </div>
+        <div class="side-bar-header-three">
+            <a href="">
+                <i class="fa-solid fa-user-pen"></i>
+            </a>
+        </div>
+    </div>
+
+
+
+    <div class="header" id="header">
+
+        <!-- the main fitpack logo image at the start of the website -->
+        
+        <img class="fitpacklogo" src="fitpacklogo.png">
+
+        <!-- ----------------------------------------------------------- -->
+
+        <!-- the dumbbell button main class  -->
+
+             <div class = "buttons">
+
+        <!-- ------------------------------- -->
+
+                
+        <!-- the dumbbell "Fitness" button  -->
+        
+                <div class="btn-one">
+
+                    <div class = "dropdown">
+                        <button class="Fitness"><i class="fa-solid fa-dumbbell"></i></button>
+
+                        <span class = "left-arrow-part"></span>
+                        <span class = "right-arrow-part"></span>
+
+                            <div class = "dropdown-items">
+                                <a href = "test.html"><span></span>Weightlifting</a>
+                                <a href = "test.html"><span></span>Calisthenics</a>
+                                <a href = "test.html"><span></span>Aerobics</a>
+                            </div>
+                    </div>
+
+                </div>
+
+             </div> <!--this is where the dumbbell button main class ends-->
+
+    </div>
+
+        <div class = "whiteboard-statement"><h3>Welcome back, user!</h3></div>
+
+        <div class = "whiteboard"> 
+
+            <div class = "main-todolist-class">
+                
+            <h1 class = "list-title">
+                What's for today, boss?
+            </h1>
+
+            <div class = "todo-list">
+                <div class = "list-head">
+                    <input type = "text" class = "enter-list">
+                    <button class = "add"> Add </button>
+                </div>
+
+                <div class = "workouts">
+
+                    <!-- <div class = "item">
+
+                        <p>Pull-ups 4x until Failure</p> 
+
+                        <div class = "item-button">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                    </div>  -->
+
+                </div>
+            </div>
+
+            </div>
+             
+
+            <div class="container">
+
+                <div class="wrapper">
+            
+                    <div class = "stopwatch">
+                        <span class="hours">00:</span>
+                        <span class="minutes">00:</span>
+                        <span class="seconds">00</span>
+                    </div>
+                        
+                         <br>
+
+                         <div class = "stopwatch-buttons">
+
+                            <i id="btn-start" class="fa-regular fa-circle-play"></i>
+                         
+                         
+                        
+                            <i id="btn-stop" class="fa-regular fa-circle-stop"></i>  
+                        
+                        
+                        
+                            <i id="btn-restart" class="fa-solid fa-clock-rotate-left"></i>
+                            
+                         </div>   
+                </div>
+
+            </div>
+
+            <!-- <div class = "start-your-workout"><h3>Start your workout?</h3></div> -->
+        </div>
+
+
+
+        <div class="bottom-bar">
+
+            <div class="hdis-dropdown">
+                <ul>
+                    <li>
+                        <a href="###">How do I start?</a>
+                        <ul class = "drop-down">
+                            <li><a href = "test.html">Build Muscle</a></li>
+                            <li><a href = "test.html">Lose Fat</a></li>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class = "calevala-interactive-logo">
+            </div> 
+        </div>
+
+        <div class = "background-image" id="background-image"></div>
+
+    <script>
+
+        // main button dropdown script -------------------------------------
+
+        const dropdown = document.querySelector('.dropdown');
+
+        dropdown.addEventListener('click', () => {
+            dropdown.classList.toggle('active');
+        });
+
+        // ------------------------------------------------------------
+
+        // main side bar script ---------------------------------------
+
+        function side_bar(x) {
+            document.getElementById("side-bar").classList.toggle("side-bar-anim");
+            document.getElementById("background-image").classList.toggle("bg-image-anim");
+            document.getElementById("side-bar-menu").classList.toggle("menu-anim");
+            x.classList.toggle("close");
+        }
+
+        // ------------------------------------------------------------
+
+        // second side bar script -------------------------------------
+
+        function bar_menu() {
+            document.getElementById("down-bar").classList.toggle("down-bar-anim");
+            document.getElementById("bar-menu").classList.toggle("bar-menu-anim");
+            document.getElementById("bar-menu-hover").classList.toggle("close-menu-anim");
+        }
+
+        // stopwatch script ------------------------------------------------------------
+        
+let [seconds, hours, minutes] = [0, 0, 0]; 
+let timeRef = document.querySelector(".stopwatch");
+
+// the stopwach digit
+let int = null;
+
+document.getElementById("btn-start").addEventListener("click", () =>  {
+    if(int !== null) {
+        clearInterval(int);
+    }
+    int = setInterval(displayTimer, 1000);
+});
+
+document.getElementById("btn-stop").addEventListener("click", () => {
+    clearInterval(int);
+});
+
+document.getElementById("btn-restart").addEventListener("click", () => {
+    clearInterval(int);
+    [seconds, minutes, hours] = [0, 0, 0];
+    timeRef.innerHTML = "00: 00: 00";
+});
+
+function displayTimer() {
+    seconds += 1;
+    if(seconds == 60) {
+        seconds = 0;
+        minutes++;
+        if(minutes == 60) {
+            minutes = 0;
+            hours++;
+        }
+    }
+
+    let h = hours < 10 ? "0" + hours : hours;
+    let m = minutes < 10 ? "0" + minutes : minutes;
+    let s = seconds < 10 ? "0" + seconds : seconds;
+
+    timeRef.innerHTML= `${h}: ${m}: ${s}`;
+}
+
+
+
+// to do list
+
+// script for adding stuff into the input type of the list 
+
+let input = document.querySelector('.enter-list');
+let addBtn = document.querySelector('.add');
+let workouts = document.querySelector('.workouts');
+
+// add button disabled / enabled when the user adds something inside the input box (without any whitespaces, which is why they used the trim feature)
+
+input.addEventListener('keyup' , () => {
+    if(input.value.trim() != 0) {
+        addBtn.classList.add('active')
+    } else {
+        addBtn.classList.remove('active')
+    }
+})
+
+// add new item to the list 
+
+addBtn.addEventListener('click', () => {
+    if (input.value.trim() != 0) {
+        let newItem = document.createElement('div');
+        newItem.classList.add('item');
+        newItem.innerHTML = 
+        
+        `
+        
+        <div class = "item">
+
+        <p> ${input.value} </p> 
+
+            <div class = "item-button">
+            <i class="fa-solid fa-check"></i>
+            </div>
+
+
+        </div>
+        
+        `
+
+        workouts.appendChild(newItem);
+        input.value = '';
+    } else {
+        alert("Make sure to add something to your workout!")
+    }
+} )
+
+    // finishing a workout task with the check logo 
+
+        workouts.addEventListener('click', (e) => {
+            if(e.target.classList.contains('fa-check')) {
+                e.target.parentElement.parentElement.remove();
+            }
+        })
+
+        // 
+
+    </script>
+
+</body>
+</html>

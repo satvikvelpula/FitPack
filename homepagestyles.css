@@ -1,0 +1,1031 @@
+
+body {
+    margin: 0;
+    background-color: black;
+    min-height: 100vh;
+}
+
+.bar {
+    height: 70px;
+    width: 100%;
+    position: sticky;
+    top: 0px;
+    z-index: +3;
+    animation: bar 12s infinite;
+    animation-direction: alternate;
+    overflow: hidden;
+}
+
+/* the how do i start dropdown customization */
+
+ul {
+    list-style: none;
+    margin: 0; 
+    padding: 0;
+    left: auto;
+    right: auto;
+    float: right;
+}
+
+ul li {
+    display: inline-block; 
+    position: relative;
+    text-decoration: none;
+}
+
+ul li a {
+    display: block;
+    margin: 10px;
+    color: white;
+    text-decoration: none;  
+    font-size: 20px;
+    text-align: center;
+    align-items: center;
+    font-family: MainFont;
+}
+
+ul li ul.drop-down li {
+    display: block;
+}
+
+ul li ul.drop-down {
+    width: 100%;
+    background: rgb(83,35,35);
+    position: absolute;
+    display: none;
+    border-radius: 5px;
+}
+
+ul li:hover ul.drop-down {
+    display: block;
+}
+
+/* the calevala interactive logo on the bottom bar */
+
+.calevala-interactive-logo {
+    background-image: url(Calevala-Logo.png);
+    background-size: cover;
+    width: 50px;
+    height: 50px;
+    position: relative;
+    top: 10px;
+}
+
+.calevala-interactive-logo {
+    margin: auto; 
+    right: auto;
+    position: relative;
+} 
+
+.header {
+    background-color: black;
+    height: 1000px;
+    align-items: center;
+    transition: 0.5s;
+}
+
+/* whiteboard border system */
+
+.whiteboard-statement {
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 70px;
+    font-family: LogoFont;
+    
+} 
+
+.whiteboard {
+    height: 600px;
+    border: 20px;
+    animation: whiteborders 2s infinite;
+    animation-direction: alternate;
+    border-radius: 20px; 
+    background-color: whitesmoke;
+}
+
+@keyframes whiteborders {
+    from {
+        border-top: 10px solid rgb(25, 25, 25); 
+        border-right: 10px solid rgb(50,50,50); 
+        border-bottom: 10px solid rgb(180, 180, 180);
+        border-left: 10px solid rgb(165, 165, 165);
+    }
+    
+    to {
+        border-top: 10px solid rgb(52,3,3); 
+        border-right: 10px solid rgb(91,15,15); 
+        border-bottom: 10px solid rgb(75, 75, 75);
+        border-left: 10px solid rgb(100, 100, 100);
+    }
+}
+
+
+.container {
+    text-align: center;
+    position: absolute;
+    height: 600px;
+}
+
+.wrapper {
+    position: relative;
+    z-index: +1;
+    background-color: #360000;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    position: relative;
+    left: 50px;
+    top: 100px; 
+    animation: shine; 
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+}
+
+.wrapper div {
+    font-family: MainFont;
+    font-size: 50px;
+    color: white;
+    text-align: center;
+} 
+
+/* the stopwatch display with css */
+
+.wrapper .stopwatch {
+    position: relative; 
+    top: 107px;
+}
+
+/* the stopwatches buttons customization */
+
+.stopwatch-buttons i {
+
+    color: #360000;
+    transition: all .2 ease;
+    border: 0;
+    background: none;
+    cursor: pointer;
+    font-size: 30px;
+    margin: 10px;
+    position: relative;
+    top: 250px;
+    
+}
+
+.stopwatch-buttons a {
+    text-decoration: none;
+    width: 30px;
+    height: 30px;
+}
+
+/* scaling the stopwatch  */
+
+@media only screen and (max-width: 1250px) {
+    .wrapper {
+        height: 250px;
+        width: 250px;
+        left: 30px;
+
+    }
+
+    .wrapper .stopwatch {
+        position: relative;
+        top: 90px;
+        font-size: 40px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .wrapper {
+        position: relative;
+        height: 180px;
+        width: 180px;
+        left: 20px;
+        top: 150px;
+    }
+
+    .wrapper .stopwatch {
+        position: relative;
+        top: 65px;
+        font-size: 30px;
+    }
+
+    .wrapper div {
+        margin-bottom: -50%;
+    }
+}
+
+@media only screen and (max-width: 530px) {
+    .wrapper {
+        position: relative;
+        height: 130px;
+        width: 130px;
+        left: 20px;
+        top: 150px;
+    }
+
+    .wrapper .stopwatch {
+        position: relative;
+        top: 50px;
+        font-size: 20px;
+    }
+
+    .stopwatch-buttons i {
+        font-size: 16px;
+    }
+
+    .wrapper div {
+        margin-bottom: -140px;
+    } 
+}
+
+@media only screen and (max-width: 400px) {
+
+    /* make so that the stopwatch goes in the bottom center next time */
+
+    .wrapper {
+        position: relative;
+        height: 90px;
+        width: 90px;
+        top: 200px;
+    }
+
+    .wrapper .stopwatch {
+        font-size: 15px;
+        top: 32px;
+    }
+
+    .stopwatch-buttons i {
+        font-size: 11px;
+        margin: 5px;
+        top: 180px;
+    }
+
+    
+}
+
+@media only screen and (max-width: 280px) {
+
+    .wrapper {
+        position: relative;
+        height: 75px;
+        width: 75px;
+        top: 220px;
+    }
+
+    .wrapper .stopwatch {
+        font-size: 12px;
+        top: 30px;
+    }
+
+    .stopwatch-buttons i {
+        font-size: 11px;
+        margin: 2px;
+        top: 180px;
+    }
+}
+
+/* the stopwatches buttons customization ends here */
+
+@keyframes shine {
+    0%, 100% {
+        box-shadow: 0px 0px 150px -12px rgb(255, 0, 0);
+    } 
+
+    50% {
+        box-shadow: 0px 0px 250px 3px rgba(160, 8, 8, 0.5);
+    }
+}
+
+/* .start-your-workout {
+    position: relative;
+    top: 20%;
+    left: auto;
+    right: auto;
+    color: black;
+} */
+
+
+/* the bottom red bar. we were going to name it middle bar 
+when we put it in the middle, but then we decided to keep it called bottom bar,
+because we're like that :)*/
+
+.bottom-bar {
+    background-color: black;
+    height: 70px;   
+    position: sticky;
+    bottom: 0;
+    z-index: +3;
+    animation: bar 12s infinite;
+    animation-direction: alternate;
+}
+
+/* the button Fitness, in the class .dropdown because this button is going to consist of a 
+dropdown when you click on it */
+
+/* in this code below, i am editing how the button looks like */
+
+.dropdown .Fitness {
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    background: #5B0F0F;
+    color: white;
+    box-shadow: 0 10px 15px rgba(255, 255, 255, 0.2);
+    padding: 30px;
+    width: 200px;
+    height: 120px;
+    cursor: pointer;
+    font-family: MainFont;
+    font-size: 40px;
+    transition: 0.3s;
+}
+
+
+/* keyframe for animation button */
+@keyframes fit {
+    from {width: 200px;}
+    to {width: 230px;}
+}  
+
+
+/* the Fitness arrow button (inside the class .dropdown) */
+.dropdown {
+    width: 200px;
+    height: 100px;
+}    
+
+/* positioning the dropdown items */
+.dropdown .dropdown-items {
+    position: absolute;
+    top: auto;
+    left: auto;
+    width: auto;
+    height: auto;
+    overflow:hidden;
+    visibility: hidden;
+    cursor: pointer;
+}
+
+/* editing the links of the items in dropdown */
+.dropdown .dropdown-items a {
+    position: relative;
+    display: flex;
+    font-size: 17px;
+    background: #532323;
+    border-radius: 5px;
+    padding: 8px 15px;
+    margin-top: 2.6px;
+    left: 100%;
+    text-decoration: none; 
+    color: white;
+    font-family: MainFont;
+    z-index: 1;
+    /* for span */
+    overflow: hidden;
+    transition: .2s;
+}
+
+/* when the dropdown button is pressed, the dropdown items show */
+ .dropdown.active .dropdown-items a {
+    left: -0.2%;
+    visibility: visible;
+} 
+
+
+/* some editing to make the hovering on the buttons look better*/
+
+.dropdown .dropdown-items a span {
+    position: absolute; 
+    top: 1%;
+    left: 0.1%;
+    width: 150px; 
+    height: 120px;
+    background: #181823;
+    z-index: -1;
+    border-radius: inherit;
+    transform: rotate(160deg);
+    transform-origin: right;
+    transition: 0.2s;
+}
+
+.dropdown .dropdown-items a:hover span {
+    transform: rotate(0deg);
+    transition: 0.2s;
+}
+
+/* the dropdown of the button Fitness starts here  */
+.left-arrow-part, .right-arrow-part {
+    position: relative;
+    bottom: 30px;
+}
+
+.dropdown .left-arrow-part, .right-arrow-part {
+    position: relative; 
+    display: inline-block;
+    width: 6px;
+    height: 2px;
+    background: white;
+    left: 20px;
+    cursor: pointer; 
+    transition: 0.2s;
+}
+
+.dropdown .left-arrow-part {
+    transform: rotate(45deg);
+}
+
+/* most explanation in the js script, but when arrow is clicked, both of the parts move a 135 degrees */
+
+.dropdown.active .left-arrow-part {
+    transform: rotate(135deg);
+}
+
+.dropdown.active .right-arrow-part {
+    transform: rotate(-135deg);
+}
+
+.dropdown .right-arrow-part {
+    left: 13px;
+    transform: rotate(-45deg);
+}
+
+.buttons {
+    margin: auto;
+    margin-top: 200px;
+    left: auto;
+    right: auto;
+    display: flex;
+}
+
+.buttons div {
+    margin: auto;
+}
+
+
+.fitpacklogo {
+    width: 267px;
+    height: 72px;
+    margin-top: 250px;
+    margin: auto;
+    cursor: pointer; 
+    display: flex;
+    align-items: center;
+    position: relative;
+    left: 8px;
+    right: auto;
+    top: 10%;
+    transition: 0.1s;
+}
+
+
+.fitpacklogo:hover {
+    width: 280px;
+    height: 76px;
+}
+
+@keyframes bar {
+    from {background-color: #222222;}
+    to {background-color: #360000;}
+}
+
+/* same font as the logo FitPack */
+
+@font-face {
+    font-family: LogoFont;
+    src: url(LeagueSpartan-Bold.ttf)
+}
+
+/* font we use for basic text */
+
+@font-face {
+    font-family: MainFont;
+    src: url(Poppins-Bold.ttf)
+}
+
+/* fixing the emptied out divs, and just fixing bugs overall */
+
+/* FIXING BUGS STATION */
+
+.dropdown {
+    height: 0px;
+}
+
+/* FIXING BUGS STATION ends here */
+
+
+/* the main background image of the website */
+.background-image {
+    background-image: url(Homepage\ Background\ Mock.png);
+    background-size: cover; 
+    height: 1000px; 
+    position: sticky;
+    top: 100%;
+    transition: 0.5s;
+}  
+
+
+/* scaling background image starts here */
+
+@media only screen and (max-width: 1200px) {
+    .background-image {
+        height: 500px;
+        width: 500px;
+    }
+}
+
+ @media only screen and (max-width: 530px) {
+    .background-image {
+        height: 250px;
+        width: 250px;
+    }
+
+} 
+
+@media only screen and (max-width: 274px) {
+    .background-image {
+        height: 170px;
+        width: 170px;
+    }
+}
+
+@media only screen and (min-width: 1600px) {
+    .background-image {
+        height: 1000px;
+        width: 1000px;
+    }
+}
+
+/* scaling background image ends here */
+
+
+/* scaling the buttons here */
+
+@media only screen and (max-width: 1600px) {
+    
+}
+
+@media only screen and (max-width: 300px) {
+
+    .fitpacklogo {
+        left: 2px;
+        width: 200px;
+        height: 55px;
+    }
+
+    ul li a {
+        font-size: 15px;
+
+    }
+}
+
+@media only screen and (min-width: 300px) and (max-width: 800px) {
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        height: 35%;
+        margin: auto;
+        align-items: center;
+        position: relative;
+    }
+
+    /* scaling buttons ends here */
+
+    .fitpacklogo {
+        width: 267px;
+        height: 72px;
+    }
+
+    .fitpacklogo:hover {
+        width: 267px;
+        height: 76px;
+    }
+
+    .dropdown .dropdown-items a {
+        margin-top: 2.6px;
+        left: 100%;
+        top:-4px;
+        color: white;
+        z-index: 1;
+        /* for span */
+        overflow: hidden;
+        transition: .2s;
+    }
+
+    .Fitness {
+        width: 200px;
+        height: 100px;
+    }
+
+    .bg-image-anim {
+        margin-left: 40px;
+    }
+
+    .whiteboard-statement {
+        font-size: 15px;
+    }
+}
+
+/* scaling the whiteboard statement */
+
+@media only screen and (max-width: 400px) {
+    .whiteboard-statement {
+        font-size: 20px;
+    }
+} 
+
+@media only screen and (min-width: 400px) and (max-width: 800px) {
+    .whiteboard-statement {
+        font-size: 40px;
+    }
+}
+
+
+/* side bar on home page */
+
+/* disabling the sidebar on max width of 500 px */
+
+@media only screen and (max-width: 500px) {
+    .side-bar, .side-bar-menu {
+        display: none;
+    }
+
+    .side-bar a, i {
+        display: none;
+    }
+
+    .background-image {
+        margin: 0;
+    }
+
+    .bg-image-anim {
+        margin: 0;
+    }
+
+    .calevala-interactive-logo {
+        margin: auto; 
+        left: auto;
+        float: left;
+        left: 20px;
+        position: relative;
+    }
+
+    .whiteboard-statement {
+        font-size: 25px;
+    }
+}
+
+.side-bar {
+    width: 0;
+    height: 100%; /* keeps the .side-bar in the screen of max height */
+    position: fixed; /* position fixed keeps in line almost same as display flex, but way differently */
+    z-index: 1;  /* keeps the .side-bar visible */
+    top: 0; /* sticky position of the .side-bar  */
+    background-color: #5C1010; /* the .side-bar background color */
+    padding-top: 105px; /*  the padding-top to make the content of the .side-bar in line */
+    text-align: center; /* centering the text inside of the .side-bar */
+    font-family: MainFont; /* the .side-bar font family */
+    transition: 0.5s; /* the animation duration when opening the .side-bar */
+    z-index: +4;
+}
+
+.side-bar a {
+    display: block; /* displays the link as invisible */
+    margin: auto; /* centers the content text of the .side-bar as in animation */
+    visibility: hidden; 
+    text-decoration: none; /* removes the link's bottom line */
+    font-size: 25px; /* the font size */
+    color: #818181; /* the color of the text */
+    opacity: 0;
+    transition: 0.2s;
+}
+
+.side-bar i:hover {
+    transition: 0.2s;
+    color: rgb(247, 216, 216); /* changes the .side-bar a link of the text color */
+}
+
+/* editing the headers in the sidebar  */
+
+.side-bar i {
+    font-size: 20px; /* changes the header 3 of font size */
+    margin: 15px 0 15px; /* the margin of top and bottom */
+    margin: auto;
+    color: white;
+}
+
+.side-bar div {
+    margin-bottom: 20px;
+    font-size: 1px;
+}
+
+.side-bar-header-two i {
+    font-size: 18px;
+}
+
+.side-bar-header-three i {
+    font-size: 18px;
+}
+
+
+.side-bar div:hover {
+    width: 100%; /* changes the all inside of the .side-bar divisions to the max widths */
+}
+
+.side-bar-menu {
+    padding: 20px 15px 20px 15px; /* moves the menu icon position */
+    top: 90px;
+    z-index: +3;
+    transition: 0.5s;
+}
+
+.menu-hover {
+    width: 50px;
+    height: 22px; /* the height of the division of .clicking */
+    cursor: pointer; /* changes the menu icon to a pointer when moving a mouse over it */
+}
+
+.menu-one { /* the first menu icon line */
+    background-color: white; /* the background color of the menu icon */
+    width: 20px; /* the width of the menu first line */
+    height: 3px; /* the height of the menu first line */
+    margin: auto; /* center the item */
+    border-radius: 2px; /* changes the menu icon's outside border of the radius */
+    background: linear-gradient(to left, white 50%, aqua 50%) right; /* at the left and right of the background color is 50%, shows from left to right */
+    background-size: 200%; /* keeps the between background colors at 100% position */
+    transition: 0.7s; /* the animation duration */
+}
+
+.menu-two { /* the second menu icon line */
+    background-color: white; /* the background color of the menu icon */
+    width: 20px; /* the width of the menu second line */
+    height: 3px; /* the height of the menu second line */
+    margin: auto; /* center the item */
+    border-radius: 2px; /* changes the menu icon's outside border of the radius */
+    position: relative; /* the position of the second menu icon */
+    top: 4.5px; /* changes the second of the menu icon top */
+    background: linear-gradient(to left, white 50%, aqua 50%) right; /* at the left and right of the background color is 50%, shows from left to right */
+    background-size: 200%; /* keeps the between background colors at 100% position */
+    transition: 0.6s; /* the animation duration */
+}
+
+.menu-hover:hover div {
+    background-position: left; /* the background of the previous menu icons colors changes from left to right. (the position left) */
+}
+
+.close .menu-one {
+    transform: translate(0px, 8px) rotate(-45deg);
+}
+
+.close .menu-two{
+    transform: rotate(45deg);
+}
+
+.side-bar-anim {
+    width: 40px;
+}
+
+.side-bar-anim a {
+    transition-duration: 0.5s;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* .bg-image-anim {
+    margin-left: 40px;
+} */
+
+.menu-anim {
+    margin-left: 40px;
+}
+
+.down-bar a {
+    visibility: hidden;  
+}
+
+/* the second bar menu ------------------------------------------------ */
+
+/* activating the bar menu on 499 */
+
+ @media only screen and (max-width: 499px) {
+    .down-bar {
+        width: 100%;
+        height: 0; /* keeps the .side-bar in the screen of max height */
+        z-index: 1;  /* keeps the .side-bar visible */
+        top: 0; /* sticky position of the .side-bar  */
+        background-color: #5C1010; /* the .side-bar background color */
+        display: flex;
+        font-family: MainFont; /* the .side-bar font family */
+        transition: 0.5s; /* the animation duration when opening the .side-bar */
+        z-index: +2;
+        opacity: 0;
+
+    }
+    
+    /* when the down bar first opens */
+
+    .down-bar-anim {
+        height: 42px;
+        opacity: 1;
+    }
+
+    /* when the down bar first opens */
+
+    .down-bar div {
+        margin: 0px 10px 0px 10px;
+    }
+
+    .down-bar-anim a {
+        visibility: visible;
+        margin: 5px;
+        transition: 0.2s;
+    }
+    
+    .down-bar a {   
+        text-decoration: none;
+        transition: 0.5s;
+    }
+
+    .down-bar i {
+        font-size: 20px;
+        color: white;
+        /* letter-spacing: 20px; */
+        margin-left: 20px;
+        margin-top: 10px;
+    }
+
+    .down-bar i:hover {
+        transition: 0.2s;
+        color: rgb(247, 216, 216); /* changes the .side-bar a link of the text color */
+    }
+
+    .down-menu-icon2 i {
+        font-size: 18px;
+    }
+
+    .down-menu-icon3 i {
+        font-size: 18px;
+    }
+
+    .bar-menu {
+        z-index: +3;
+        cursor: pointer;
+        float: left;
+        left: auto;
+        margin-top: 29px;
+        margin-left: 25px;
+    }
+
+    .bar-menu-hover div {
+        background-position: left;
+    }
+    
+    .bar-menu-one {
+        background-color: white; /* the background color of the menu icon */
+        width: 20px; /* the width of the menu first line */
+        height: 3px; /* the height of the menu first line */
+        margin: auto; /* center the item */
+        border-radius: 2px; /* changes the menu icon's outside border of the radius */
+        background: linear-gradient(to left, white 50%, aqua 50%) right; /* at the left and right of the background color is 50%, shows from left to right */
+        background-size: 200%; /* keeps the between background colors at 100% position */
+        transition: 0.7s; /* the animation duration */
+    }
+    
+    .bar-menu-two {
+        background-color: white; /* the background color of the menu icon */
+        width: 20px; /* the width of the menu second line */
+        height: 3px; /* the height of the menu second line */
+        margin: auto; /* center the item */
+        border-radius: 2px; /* changes the menu icon's outside border of the radius */
+        position: relative; /* the position of the second menu icon */
+        top: 4.5px; /* changes the second of the menu icon top */
+        background: linear-gradient(to left, white 50%, aqua 50%) right; /* at the left and right of the background color is 50%, shows from left to right */
+        background-size: 200%; /* keeps the between background colors at 100% position */
+        transition: 0.6s; /* the animation duration */
+    }
+
+    .close-menu-anim .bar-menu-one {
+        transform: translate(0px, 8px) rotate(-45deg);
+    }
+
+    .close-menu-anim .bar-menu-two {
+        transform: rotate(45deg);
+    }
+
+ }
+
+ @media only screen and (max-width: 210px) {
+
+    body {
+        background: none;
+    }
+    
+    div {
+        visibility: hidden;
+    }
+
+    /* .error {
+        background-image: url('ERROR_DISPLAY405.png');
+         background-size: cover;
+         visibility: visible;
+         height: 300px;
+         width: 100%;
+         background-color: white;
+     } */
+ } 
+
+
+
+ /* the build your own workout customization */
+
+ 
+ .main-todolist-class {
+    margin-left: 60%;
+    height: 0;
+    right: auto;
+    left: auto; 
+    float: right;
+ } 
+
+.list-title {
+    font-family: MainFont; 
+    font-size: 20px;
+    color: #5B0F0F;
+}
+
+
+.todo-list {
+    width: auto;
+    padding: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    background-color: white;
+
+} 
+
+.list-head {
+    display: grid; 
+    grid-template-columns: 4fr 1fr;
+    gap: 7px;
+} 
+
+.enter-list {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    outline: none;
+    font-family: LogoFont;
+
+}
+
+.add {
+    border: none;
+    border-radius: 5px;
+    background-color: #5B0F0F; 
+    font-size: 16px;
+    outline: none;
+    color: white;   
+    font-family: LogoFont;
+    cursor: pointer;
+    opacity: .6;
+    pointer-events: none;
+
+}
+
+.add.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+ .workouts {
+    width: auto;
+} 
+
+.item.completed p{
+    text-decoration: line-through;
+    color: #11111180;
+}
+
+.item p {
+    font-size: 15px;
+    width: auto; 
+    font-family: MainFont;
+}
+/* 
+.item-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+} */
+
+.item-button i {
+    font-size: 18px;
+    cursor: pointer;    
+}
+
+div .item-button {
+    float: right;
+    margin-top: -35px; 
+
+}
