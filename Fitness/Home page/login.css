@@ -1,0 +1,697 @@
+/* Quang's code */
+
+* {
+    /* box-sizing: border-box; */
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    width: 100%;
+    height: 100%;
+    /* min-height: 100vh; */
+    background-color: #000000;
+     /* overflow-x: hidden; */
+}
+
+/* bar design starts here */
+.bar {
+    background-color: black; /* change the background color */
+    /* width: 100%; */
+    height: 60px; /* the top of bar height */
+    font-family: 'Courier New', Courier, monospace; /* changes automatically all inside division of the top bar font family */
+    display: flex; /* display the content to flex */
+    position: sticky; /* make the top bar sticky on screen when scrolling */
+    top: 0; /* sticky bar starts from top of the zero */
+    z-index: +2; /* keeps the top bar visible */
+    animation: bar 2s infinite; /* animation bar */
+    animation-direction: alternate;
+}
+
+.bar:hover {
+    background-color: rgb(46, 46, 46); /* if you move your mouse to the top bar it will change background color */
+}
+
+.bar a {
+    text-decoration: none; /* removes line of the link */
+    width: 100px; /* width of the a link from inside the top bar */
+    height: 60px; /* height of the a link from inside the top bar */
+}
+
+.bar-menu {
+    margin: auto;
+    margin-left: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+    display: none;
+}
+
+.bar-menu div {
+    /* background-color: #fff; */
+    background: linear-gradient(to left, white 50%, aqua 50%) right; /* at the left and right of the background color is 50%, shows from left to right */
+    background-size: 200%;
+    width: 35px;
+    height: 5px;
+    border-radius: 2px;
+}
+
+.bar-menu-one {
+    transition: 0.7s;
+}
+
+.bar-menu-two {
+    transition: 0.6s;
+    margin-top: 2.5px;
+}
+
+.bar-menu-three {
+    transition: 0.5s;
+    margin-top: 2.5px;
+}
+
+.bar-menu:hover div {
+    background-position: left;
+}
+
+.bar-link {
+    width: 100%; /* the top bar link of log in width */
+    height: 25px; /* the top bar link of log in height */
+    /* background-color: antiquewhite; /* the original background color */
+    color: white; /* the text color */
+    position: relative; /* the content position of log in */
+    margin: auto; /* the log in content top position */
+    /* margin-right: 20px; */
+    float: right; /* the log in content left position */
+    transition-duration: 0.5s; /* the animation duration */
+}
+
+.bar-link:hover {
+    width: 100%; /* moving mouse over the log in link changes the width of the "bar-link" */
+}
+
+.bar-link h2 {
+    /* width: 90px; the log in text width */
+    margin: 0; /* removes the margin */
+    float: right;
+    color: white; /* the log in text color */
+    margin-right: 25px;
+    transition-duration: 0.5s; /* the animation duration */
+}
+
+.bar-link h2:hover {
+    background-color: antiquewhite;
+    color: rgb(81, 81, 81); /* changes the color of the log in text */
+}
+/* bar design ends here */
+
+/* down bar design starts here */
+.down-bar {
+    background-color: rgb(92, 16, 16);
+    height: 0px; /* 42px */
+    display: flex;
+    visibility: hidden;
+    align-items: center;
+    transition: 0.5s;
+}
+
+.down-bar div {
+    margin: 30px;
+}
+
+.down-bar a {
+    text-decoration: none;
+    cursor: pointer;
+    opacity: 0;
+    transition: 0.25s;
+    /* margin: 0px 10px 0px 30px; */
+}
+
+.down-bar i { 
+    color: white;
+}
+/* down bar design ends here */
+
+/* side bar design starts here */
+.side-bar {
+    width: 0; /* width of the .side-bar */
+    height: 100%; /* keeps the .side-bar in the screen of max height */
+    position: fixed; /* position fixed keeps in line almost same as display flex, but way differently */
+    z-index: 1; /* keeps the .side-bar visible */
+    top: 0; /* sticky position of the .side-bar  */
+    background-color: #000000; /* the .side-bar background color */
+    padding-top: 80px; /* adds the padding-top to make the content of the .side-bar in line */
+    text-align: center; /* centering the text inside of the .side-bar */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* the .side-bar font family */
+    transition: 0.5s; /* the animation duration when opening the .side-bar */
+}
+  
+.side-bar a {
+    width: 80px; /* the .side-bar link of the width */
+    height: 50px; /* the .side-bar link of the height */
+    display: none; /* displays the link as invisible */
+    margin: auto; /* centers the content text of the .side-bar as in animation */
+    text-decoration: none; /* removes the link's bottom line */
+    font-size: 25px; /* the font size */
+    color: #818181; /* the color of the text */
+    transition: 1s; /* the animation duration */
+}
+
+.side-bar a:hover {
+    color: rgb(16, 16, 16); /* changes the .side-bar a link of the text color */
+}
+
+.side-bar h3 {
+    font-size: 25px; /* changes the header 3 of font size */
+    margin: 15px 0 15px; /* the margin of top and bottom */
+}
+
+.side-bar div {
+    width: 0;  /* the inside of the .side-bar divisions width */
+    height: 30px; /* the insdie of the .side-bar divisions height */
+    /* margin: 0; */
+    background-color: antiquewhite; /* the original of inside the .side-bar divisions background color */
+    transition: 0.5s; /* the animation duration */
+}
+
+.side-bar div:hover {
+    width: 100%; /* changes the all inside of the .side-bar divisions to the max widths */
+    color: black;
+}
+
+.side-bar-header-one h3 {
+    animation: side-bar-header-one 3s infinite;
+    animation-direction: alternate;
+}
+
+@keyframes side-bar-header-one {
+    from {color: #818181;}
+    to {color: red;}
+}
+
+.side-bar-header-one:hover {
+    /* width: 100%; */
+    /* or width 120px with position relative */
+}
+
+.side-bar-header-two {
+    /* width: 0; */
+}
+
+.side-bar-header-two:hover {
+    /* width: 100%; */
+}
+
+.side-bar-header-three {
+    /* width: 0; */
+}
+
+.side-bar-header-three:hover {
+    /* width: 100%; */
+}
+
+.side-bar-header-four {
+    /* width: 0; */
+}
+
+.side-bar-header-four:hover {
+    /* width: 100%; */
+}
+/* side bar desing ends here */
+
+/* container design starts here */
+.container {
+    /* margin-left: 0px; */
+    font-size: 28px; /* changes the all of the main divison font sizes */ 
+    /* padding: 0px 10px; /* adds the padding to left and right of the .main */
+    /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1593079831268-3381b0db4a77?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGd5bXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=600&q=60'); */
+    /* background: url(Homepage\ Background\ Mock.png); */
+    /* width: 100%; */
+    /* background-image: url('https://media.istockphoto.com/id/1164815367/photo/milky-way-and-starry-sky-scene-south-china.jpg?b=1&s=170667a&w=0&k=20&c=CKqm8f9zDP5_xFyfU70F46VpejEy7BK4RhcHIGX8-EQ='); */
+    background-color: black;
+    background-size: cover; /* covers the background image */
+    height: 800px; /* the height of the background image */
+    transition: 0.5s; /* the animation duration of the margin-left */
+}
+
+/* header design starts here */
+.header {
+    /* display: flex; displays the inside of the .header flex */
+    /* max-width: fit-content; */
+    height: 70px; /* height of the header */
+    position: sticky; /* keeps on the screen */
+    top: 70px; /* where it starts to being sticky */
+    z-index: +1; /* keeps it to visible in screen */
+} 
+
+.side-bar-menu {
+    /* padding: 20px 15px 20px 15px; moves the menu icon position (it basically makes content got bigger since it is "padding") */
+    margin: 20px;
+    float: left;
+}
+
+.side-menu-hover {
+    height: 22px; /* the height of the division of .clicking */
+    cursor: pointer; /* changes the menu icon to a pointer when moving a mouse over it */
+}
+
+.side-menu-hover div {
+    background-color: white;
+    width: 35px; /* the width of the menu first line */
+    height: 5px; /* the height of the menu first line */
+    margin: auto; /* center the item */
+    border-radius: 2px; /* changes the menu icon's outside border of the radius */
+    background: linear-gradient(to left, white 50%, aqua 50%) right; /* at the left and right of the background color is 50%, shows from left to right */
+    background-size: 200%; /* keeps the between background colors at 100% position */
+}
+
+.side-menu-one { /* the first menu icon line */
+    transition: 0.7s; /* the animation duration */
+}
+
+.side-menu-two { /* the second menu icon line */
+    position: relative; /* the position of the second menu icon */
+    top: 2.5px; /* changes the second of the menu icon top */
+    transition: 0.6s; /* the animation duration */
+}
+
+.side-menu-three { /* the third menu icon line */
+    position: relative; /* the position of the third menu icon line */
+    top: 5px; /* changes the third of the menu icon top */
+    transition: 0.5s; /* the animation duration */
+}
+
+.side-menu-hover:hover div {
+    background-position: left; /* the background of the previous menu icons colors changes from left to right. (the position left) */
+}
+/* header design ends here */
+
+.logo {
+    background-color: none;
+    background: url('FitPack.png'); /* Fitpack Logo */
+    background-size: cover; /* covers the background size */
+    background-position: 50%; /* background position of the middle image logo */
+    width: 400px; /* logo's width */
+    height: 100px; /* logo's height */
+    margin: auto; /* centers the logo */
+    /* margin-bottom: 20px; */
+    /* position: relative; /* change the position of the relative */
+    /* bottom: 20px; /* the logo moves to top by 20 pixels */
+}
+
+/* second content starts here */
+.content-two {
+    /* display: block; */
+    background-color: black; /* the content background color */
+    box-shadow: 10px 32px 86px 0px rgba(255, 255, 255, 0.5); /* make it to same as 3D looking box shadow */
+    padding: 10px;
+    border: 10px solid rgb(196, 196, 168);
+    border-radius: 20px;
+    width: 400px; /* the width of the .content */
+    height: 440px; /* the height of the .content */
+    margin: auto; /* centers the .content */ 
+    margin-top: 30px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; /* changes the all inside of the .content font family */
+    /* transition: 1s; */
+    animation: border-radius 5s infinite;
+    animation-direction: alternate;
+}
+
+@keyframes border-radius {
+
+    from {
+        border-top: 10px solid rgb(230, 230, 230); 
+        border-right: 10px solid rgb(205, 205, 205); 
+        border-bottom: 10px solid rgb(180, 180, 180);
+        border-left: 10px solid rgb(165, 165, 165);
+    }
+
+    to {
+        border-top: 10px solid rgb(25, 25, 25); 
+        border-right: 10px solid rgb(50, 50, 50); 
+        border-bottom: 10px solid rgb(75, 75, 75);
+        border-left: 10px solid rgb(100, 100, 100);
+    }
+}
+
+
+.content-line-two {
+    background: linear-gradient(to left, rgb(1, 1, 1) 50%, rgb(190, 190, 190) 50%) right;
+    border-radius: 50px;
+    box-shadow: 0px 8px 16px 0px rgba(255, 255, 255, 0.5);
+    width: 70px;
+    margin: auto;
+    padding: 10px;
+    margin-bottom: 5px;
+    position: relative;
+    bottom: 20px;
+    background-position: left;
+    animation: switch 2s infinite;
+    animation-direction: alternate;
+}
+
+.log-in {
+    /* padding-top: 20px; */
+}
+
+.log-in h3 {
+    text-align: center;
+    margin: 0;
+    color: white;
+}
+
+.line {
+    width: 30%;
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 10px;  
+    position: relative;
+    bottom: 15px;
+    border-bottom: 3px solid white;
+}
+
+.log-in input {
+    padding: 10px;
+    width: 100%;
+    margin: auto;
+    border: 0;
+    outline: 0;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    background: none;
+}
+
+.log-in i {
+    color: white;
+    background-color: none;
+    font-size: 15px;
+    width: 12.21px;
+    margin: 10px 15px;
+}
+
+.log-in div {
+    display: flex;
+    /* padding: 10px; */
+}
+
+.log-first-input {
+    display: flex;
+    padding: 10px;
+}
+
+.log-second-input {
+    display: flex;
+    padding: 10px;
+}
+
+.log-first-input input {
+    border-bottom: 2px solid white;
+}
+
+.log-second-input input {
+    border-bottom: 2px solid white;
+
+}
+
+.remember-password {
+    font-size: 15px;
+    width: 200px;
+    margin-left: 40px;
+    color: white;
+}
+
+.remember-password input {
+    margin: 0;
+}
+
+.remember-password p {
+    width: 200px;
+} 
+
+input[type="checkbox"] {
+    width: 35px;
+    height: 15px;
+    margin: auto;
+}
+
+.log-in-submit {  
+    width: 100px;
+    margin: auto;
+}
+
+.log-in-submit input {
+    box-shadow: 0px 8px 32px 0px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(to left, firebrick 50%, rgb(50, 50, 50) 50%) right;
+    background-size: 200%;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.log-in-submit input:hover {
+    background-position: left;
+    color: white;
+    font-weight: bold;
+}
+
+.log-in input::placeholder {
+    color: white;
+}
+
+/* two content ends here */
+/* container design ends here */
+
+.bottom-bar {
+    background-color: #471c1c;
+    /* width: 100%; */
+    height: 50px;
+    position: sticky;
+    top: 100%;
+    bottom: 0;
+    z-index: +2;
+    animation: bar 2s infinite;
+    animation-direction: alternate;
+}
+
+.container-anim {
+    margin-left: 160px;
+}
+
+.side-bar-anim {
+    width: 160px;
+}
+
+.side-bar-anim a {
+    display: block;
+}
+
+/* menu closing animation */
+.close-side-bar .side-menu-one {
+    transform: translate(0px, 8px) rotate(-45deg);
+}
+
+.close-side-bar .side-menu-two{
+    transform: rotate(45deg);
+}
+
+.close-side-bar .side-menu-three {
+    opacity: 0;
+}
+/* menu closing animation ends here */
+
+.move-content-two {
+    position: relative;
+    height: 440px;
+    transition: 0.5s;
+    animation: content-one 1s;
+    animation-fill-mode: forwards;
+    animation-direction: alternate;
+}
+
+@keyframes bar {
+    from {background-color: black;}
+    to {background-color: #5B0F0F;}
+}
+
+@keyframes switch {
+    from {background-size: 200%;}
+    to {background-size: 100%;}
+}
+
+/* @media only screen and (min-width: 400px) {
+    body {
+        width: 100%; 
+        height: 100%;
+    }
+
+    .bar {
+        width: 100%;    
+        height: auto;
+    } 
+
+    .content-one {
+        padding-bottom: 20px;
+    }
+    
+} */
+
+@media only screen and (min-width: 0px) and (max-width: 328px) {
+    .bar-menu {
+        display: block;
+    }
+
+    .down-bar-anim {
+        visibility: visible;
+        height: 42px;
+    }
+
+    .down-bar-anim a {
+        opacity: 1;
+    }
+
+    .container {
+        margin-left: 0px;
+    }
+
+    .header {
+        display: none;
+    }
+
+    .logo {
+        width: 190px;
+        margin-top: 70px;
+        transition: 0.5s;
+        /* margin: 0; */
+    }
+
+    .content-two {
+        width: 230px;
+        /* width: 190px;  */
+        height: 400px;
+        transition: 0.5s;
+        /* margin: 0; */
+    }
+
+    .log-in-submit input {
+        /* position: relative;
+        bottom: 30px; */
+        transition: 0.5s;
+    }
+
+    .checkbox-one p {
+        font-size: 12px;
+    }
+
+}
+
+@media only screen and (min-width: 328px) and (max-width: 370px) {
+    .bar-menu {
+        display: block;
+    }
+
+    .down-bar-anim {
+        visibility: visible;
+        height: 42px;
+    }
+
+    .down-bar-anim a {
+        opacity: 1;
+    }
+
+    .container {
+        margin-left: 0px;
+    }
+
+    .header, .side-bar {
+        display: none;
+    }
+
+    .logo {
+        width: 200px;
+        margin-top: 70px;
+        transition: 0.5s;
+        /* margin: 0px 80px 0 60px; */
+    }
+
+    .content-two {
+        transition: 0.5s;
+        width: 250px;
+        height: 420px;
+        transition: 0.5s;
+        /* margin: 0; */
+    }
+
+    .log-in-submit input {
+        /* position: relative;
+        bottom: 20px; */
+        transition: 0.5s;
+    }
+}
+
+
+@media only screen and (min-width: 370px) and (max-width: 468px) {
+    .bar-menu {
+        display: block;
+    }
+
+    .down-bar-anim {
+        visibility: visible;
+        height: 42px;
+    }
+
+    .down-bar-anim a {
+        opacity: 1;
+    }
+
+    .container {
+        margin-left: 0px;
+    }
+
+    .header, .side-bar {
+        display: none;
+    }
+
+    .logo {
+        width: 300px;
+        margin-top: 70px;
+        transition: 0.5s;
+    }
+
+    .content-two {
+        width: 300px;
+        height: 450px;
+        transition: 0.5s;
+    }
+}
+
+@media only screen and (min-width: 468px) and (max-width: 680px) {
+    .bar-menu {
+        display: block;
+    }
+
+    .down-bar-anim {
+        visibility: visible;
+        height: 42px;
+    }
+
+    .down-bar-anim a {
+        opacity: 1;
+    }
+
+    .logo {
+        margin-top: 70px;
+    }
+
+    .container {
+        margin-left: 0px;
+    }
+
+    .header, .side-bar {
+        display: none;
+    }
+}

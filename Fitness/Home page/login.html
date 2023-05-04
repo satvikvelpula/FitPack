@@ -1,0 +1,151 @@
+<!-- Quang's code -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 ">
+    <link rel="stylesheet" href="login.css">
+    <script src="https://kit.fontawesome.com/2ed076f63b.js" crossorigin="anonymous"></script>
+    <title>log in</title>
+</head>
+<body>
+
+    <!-- bar design starts here -->
+    <div class="bar">
+        <div class="bar-menu" onclick="down_bar()">
+            <div class="bar-menu-one"></div>
+            <div class="bar-menu-two"></div>
+            <div class="bar-menu-three"></div>
+        </div>
+        <div class="bar-link">
+            <a href="">
+                <h2>Sign Up</h2>
+            </a>
+        </div>
+    </div>
+    <!-- bar design ends heere -->
+
+    <!-- down bar design starts here -->
+    <div class="down-bar" id="down-bar">
+        <div class="down-bar-header-one">
+            <a href="">
+                <i class="fa-solid fa-home"></i>
+            </a>
+        </div>
+        <div class="down-bar-header-two">
+            <a href="">
+                <i class="fa-regular fa-id-badge"></i>
+            </a>
+        </div>
+        <div class="down-bar-header-three">
+            <a href="">
+                <i class="fa-regular fa-address-card"></i>
+            </a>
+        </div>
+    </div>
+    <!-- down bar design ends here -->
+
+    <!-- side bar design starts here -->
+    <div class="side-bar" id="side-bar">
+        <div class="side-bar-header-one">
+            <a href="about-test.html">
+                <h3>About</h3>
+            </a>
+        </div>
+        <div class="side-bar-header-two">
+            <a href="">
+                <h3>Services</h3>
+            </a>
+        </div>
+        <div class="side-bar-header-three">
+            <a href="">
+                <h3>Clients</h3>
+            </a>
+        </div>
+        <div class="side-bar-header-four">
+            <a href="">
+                <h3>Contact</h3>
+            </a>
+        </div>
+    </div>
+    <!-- side bar design ends here -->
+
+    <!-- main design starts here -->
+    <div class="container" id="container">
+        <!-- header design starts here -->
+        <div class="header">
+            <div class="side-bar-menu">
+                <div class="side-menu-hover" onclick="side_bar(this)">
+                    <div class="side-menu-one"></div>
+                    <div class="side-menu-two"></div>
+                    <div class="side-menu-three"></div>
+                </div>
+            </div>
+        </div>
+        <!-- header design ends here -->
+        <div class="logo"></div> 
+        <!-- log in design starts here -->
+        <div class="content-two" id="content-two">
+            <div class="log-in">
+                <h3>Log In</h3>
+                <div class="line"></div>
+                <div class="content-line-two"></div>
+                <form action="">
+                    <!-- existed username -->
+                    <div class="log-first-input">
+                        <i class="fa-regular fa-circle-user"></i>
+                        <input type="text" id="username" placeholder="Enter Username" maxlength="20" required>
+                    </div>
+                    <!-- existed password -->
+                    <div class="log-second-input">
+                        <i class="fa-solid fa-shield"></i>
+                        <input type="password" id="password" placeholder="Enter Password" minlength="6" maxlength="20" required>
+                    </div>
+                    <!-- remember password checkbox -->
+                    <div class="remember-password">
+                        <input type="checkbox">
+                        <p>Remember Password</p>
+                    </div>
+                    <!-- submit -->
+                    <div class="log-in-submit">
+                        <input type="submit" value="Submit">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- log in design ends here -->
+    </div>
+    <!-- main design ends here -->
+    <!-- bottom bar design starts here -->
+    <div class="bottom-bar"></div>
+    <!-- bottom bar design ends here -->
+
+    <php></php>
+    <script src="usertest.js"></script>
+
+    <script>
+
+        function down_bar(x) {
+            document.getElementById("down-bar").classList.toggle("down-bar-anim");
+            x.classList.toggle("close-down-bar");
+        }
+
+        function side_bar(x) {
+            document.getElementById("side-bar").classList.toggle("side-bar-anim");
+            document.getElementById("container").classList.toggle("container-anim");
+            x.classList.toggle("close-side-bar");
+        }
+
+        // username script starts from here
+        const username = document.getElementById("username").value;
+        // username script ends from here
+
+        // password confirmation script starts from here
+        // let password = document.getElementById("password").value;
+        // password confirmation script ends from here
+
+    </script>
+    
+</body>
+</html>

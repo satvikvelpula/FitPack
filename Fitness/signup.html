@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=1280, initial-scale=1">
+    <link rel="stylesheet" href="sign-login.css">
+    <script src="https://kit.fontawesome.com/2ed076f63b.js" crossorigin="anonymous"></script>
+    <title>original web</title>
+</head>
+<body>
+
+    <!-- bar design starts here -->
+    <div class="bar">
+        <div class="bar-link">
+            <a href="">
+                <h2>Log in</h2>
+            </a>
+        </div>
+    </div>
+    <!-- bar design ends heere -->
+
+    <!-- side bar design starts here -->
+    <div class="side-bar" id="side-bar">
+        <div class="side-bar-header-one">
+            <a href="about-test.html">
+                <h3>About</h3>
+            </a>
+        </div>
+        <div class="side-bar-header-two">
+            <a href="">
+                <h3>Services</h3>
+            </a>
+        </div>
+        <div class="side-bar-header-three">
+            <a href="">
+                <h3>Clients</h3>
+            </a>
+        </div>
+        <div class="side-bar-header-four">
+            <a href="">
+                <h3>Contact</h3>
+            </a>
+        </div>
+    </div>
+    <!-- side bar design ends here -->
+
+    <!-- main design starts here -->
+    <div class="main" id="main">
+        <!-- header design starts here -->
+        <div class="header">
+            <div class="side-bar-menu">
+                <div onclick="side_bar(this)" class="menu-hover">
+                    <div class="menu-one"></div>
+                    <div class="menu-two"></div>
+                    <div class="menu-three"></div>
+                </div>
+            </div>
+        </div>
+        <!-- header design ends here -->
+        <div class="logo-two"></div> 
+        <!-- sign up design starts here -->
+        <div class="content-one" id="content-one">
+            <div class="sign-up" id="sign-up">
+                <h3>Sign Up</h3>
+                <div class="content-line"></div>
+                <form action="user.html">
+                    <!-- Username -->
+                    <div class="sign-first-input">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" id="username" placeholder="Create Username" maxlength="20" required>
+                    </div>  
+                    <!-- Email -->
+                    <div class="sign-second-input">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" placeholder="Enter valid Email" required>
+                    </div>
+                    <!-- Password -->
+                    <div class="sign-third-input">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" id="password" placeholder="Enter Password" minlength="6" maxlength="20" required>
+                    </div>
+                    <!-- Confirm Password -->
+                    <div class="sign-fourth-input">
+                        <i class="fa-solid fa-key"></i>
+                        <input type="password" id="confirm_password" placeholder="Confirm your Password" minlength="6" maxlength="20" required>
+                    </div>
+                    <!-- Agree conditions -->
+                    <div class="checkbox-one">
+                        <input type="checkbox" required>
+                        <p>I agree all terms and conditions</p>
+                    </div>
+                    <!-- Submit -->
+                    <div class="sign-up-submit"> 
+                        <input type="submit" value="Submit">
+                    </div>
+                </form>
+            </div>
+            <div class="sign-mode" id="form-mode">
+                <button class="sign-up-mode">Sign Up</button>
+                <button class="log-in-mode"  onclick="log_in()">Log In</button>
+            </div>
+        </div>
+        <!-- sign up design ends here -->
+        <!-- log in design starts here -->
+        <div class="content-two" id="content-two">
+            <div class="log-in">
+                <h3>Log In</h3>
+                <div class="content-line-two"></div>
+                <form action="">
+                    <!-- existed username -->
+                    <div class="log-first-input">
+                        <i class="fa-solid fa-user"></i>
+                        <input type="text" placeholder="Enter Username" maxlength="20" required>
+                    </div>
+                    <!-- existed password -->
+                    <div class="log-second-input">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" placeholder="Enter Password" minlength="6" maxlength="20" required>
+                    </div>
+                    <!-- remember password checkbox -->
+                    <div class="remember-password">
+                        <input type="checkbox">
+                        <p>Remember Password</p>
+                    </div>
+                    <!-- submit -->
+                    <div class="log-in-submit">
+                        <input type="submit" value="Submit">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- log in design ends here -->
+    </div>
+    <!-- main design ends here -->
+
+    <!-- bottom bar design starts here -->
+    <div class="bottom-bar"></div>
+    <!-- bottom bar design ends here -->
+
+    <!-- <div class="button-div">
+        <button onclick="drop()" class="button">Click here!</button>
+        <div id="drop-down" class="button-link">
+            <a href="">Link 1</a>
+            <a href="">Link 2</a>
+            <a href="">Link 3</a>
+        </div>
+    </div> -->
+    <!-- drop-down menu test ends here -->
+
+    <!-- <div class="moremore"></div> -->
+
+    <script>
+        // scaling device
+        let siteWidth = 1280;
+        let scale = screen.width /siteWidth;
+
+        document.querySelector('meta[name="viewport"]').setAttribute('content', 'width='+siteWidth+', initial-scale='+scale+'');
+
+        function drop() {
+            document.getElementById("drop-down").classList.toggle("show"); // click animation
+        }
+
+        function side_bar(x) {
+            document.getElementById("side-bar").classList.toggle("left-bar-anim");
+            document.getElementById("main").classList.toggle("main-anim");
+            x.classList.toggle("close");
+        }
+
+        // username script starts from here
+        const username = document.getElementById("username");
+        // username script ends from here
+
+
+        // email script starts from here
+        const email = document.getElementById("email");
+        // email script ends from here
+
+
+        // password confirmation script starts from here
+        let password = document.getElementById("password");
+        let confirm_password = document.getElementById("confirm_password");
+
+        function checkPassword() {
+            if (password.value != confirm_password.value) {
+                confirm_password.setCustomValidity("Password doesn't match.");
+            } else {
+                confirm_password.setCustomValidity("");
+            }
+        }
+
+        password.onchange = checkPassword;
+        confirm_password.onkeyup = checkPassword;
+        // password confirmation script ends from here
+
+        function log_in() {
+            document.getElementById("sign-up").classList.toggle("close-sign-up");
+            document.getElementById("form-mode").classList.toggle("close-form-mode");
+            document.getElementById("content-two").classList.toggle("open-log-in");
+            document.getElementById("content-one").classList.toggle("move-content-one")
+        }
+
+        
+
+    </script>
+    
+</body>
+</html>

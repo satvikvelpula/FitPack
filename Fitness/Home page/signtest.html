@@ -1,0 +1,182 @@
+<!-- Quang's code -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 ">
+    <link rel="stylesheet" href="signtest.css">
+    <script src="https://kit.fontawesome.com/2ed076f63b.js" crossorigin="anonymous"></script>
+    <title>test web</title>
+</head>
+<body>
+
+    <!-- bar design starts here -->
+    <div class="bar">
+        <div class="bar-menu" onclick="down_bar(this)">
+            <div class="bar-menu-one"></div>
+            <div class="bar-menu-two"></div>
+            <div class="bar-menu-three"></div>
+        </div>
+        <div class="bar-link">
+            <a href="">
+                <h2>Log In</h2>
+            </a>
+        </div>
+    </div>
+    <!-- bar design ends heere -->
+
+    <!-- down bar design starts here -->
+    <div class="down-bar" id="down-bar">
+        <div class="down-bar-header-one">
+            <a href="">
+                <i class="fa-solid fa-home"></i>
+            </a>
+        </div>
+        <div class="down-bar-header-two">
+            <a href="">
+                <i class="fa-regular fa-id-badge"></i>
+            </a>
+        </div>
+        <div class="down-bar-header-three">
+            <a href="">
+                <i class="fa-regular fa-address-card"></i>
+            </a>
+        </div>
+    </div>
+    <!-- down bar design ends here -->
+
+    <!-- side bar design starts here -->
+    <div class="side-bar" id="side-bar">
+        <div class="side-bar-header-one">
+            <a href="about-test.html">
+                <h3>About</h3>
+            </a>
+        </div>
+        <div class="side-bar-header-two">
+            <a href="">
+                <h3>Services</h3>
+            </a>
+        </div>
+        <div class="side-bar-header-three">
+            <a href="">
+                <h3>Clients</h3>
+            </a>
+        </div>
+        <div class="side-bar-header-four">
+            <a href="">
+                <h3>Contact</h3>
+            </a>
+        </div>
+    </div>
+    <!-- side bar design ends here -->
+
+    <!-- main design starts here -->
+    <div class="container" id="container">
+        <!-- header design starts here -->
+        <div class="header">
+            <div class="side-bar-menu">
+                <div class="side-menu-hover" onclick="side_bar(this)">
+                    <div class="side-menu-one"></div>
+                    <div class="side-menu-two"></div>
+                    <div class="side-menu-three"></div>
+                </div>
+            </div>
+        </div>
+        <!-- header design ends here -->
+        <div class="logo"></div> 
+        <!-- sign up design starts here -->
+        <div class="content-one">
+            <div class="sign-up">
+                <h3>Sign Up</h3>
+                <div class="line"></div>
+                <div class="content-line"></div>
+                <form action="about-test.html" method="post" onsubmit="sign_up(event)" onkeydown="remove_white_space(event)">
+                    <!-- Username -->
+                    <div class="sign-first-input">
+                        <i class="fa-regular fa-circle-user"></i>
+                        <input type="text" id="username" placeholder="Create username" maxlength="20" required>
+                    </div>  
+                    <!-- Email -->
+                    <div class="sign-second-input">
+                        <i class="fa-solid fa-envelope"></i>
+                        <input type="email" id="email" placeholder="Enter valid Email" required>
+                    </div>
+                    <!-- Password -->
+                    <div class="sign-third-input">
+                        <i class="fa-solid fa-shield"></i>
+                        <input type="password" id="password" placeholder="Enter Password" minlength="6" maxlength="20" required>
+                    </div>
+                    <!-- Confirm Password -->
+                    <div class="sign-fourth-input">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" id="confirm_password" placeholder="Confirm Password" minlength="6" maxlength="20" required>
+                    </div>
+                    <!-- Agree conditions -->
+                    <div class="checkbox-one">
+                        <input type="checkbox" required>
+                        <p>I agree all terms and conditions</p>
+                    </div>
+                    <!-- Submit -->
+                    <div class="sign-up-submit"> 
+                        <input type="submit" value="Submit">
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- sign up design ends here -->
+    </div>
+    <!-- main design ends here -->
+
+    <!-- bottom bar design starts here -->
+    <div class="bottom-bar"></div>
+    <!-- bottom bar design ends here -->
+
+    <script src="usertest.js"></script>
+
+    <script>
+
+        function down_bar(x) {
+            document.getElementById("down-bar").classList.toggle("down-bar-anim");
+            x.classList.toggle("close-down-bar");
+        }
+
+        function side_bar(x) {
+            document.getElementById("side-bar").classList.toggle("side-bar-anim");
+            document.getElementById("container").classList.toggle("container-anim");
+            x.classList.toggle("close-side-bar");
+        }
+
+        // function sign_up(event) {
+        //     event.preventDefault();
+
+        //     var username = document.getElementById("username").value;
+        //     var email = document.getElementById("email").value;
+
+        //     localStorage.setItem("Username", username);
+        //     localStorage.setItem("Email", email);
+
+        // }
+
+        // password confirmation script starts from here
+        // let password = document.getElementById("password");
+        // let confirm_password = document.getElementById("confirm_password");
+
+        // function checkPassword() {
+        //     if (password.value != confirm_password.value) {
+        //         confirm_password.setCustomValidity("Password doesn't match.");
+        //     } else {
+        //         confirm_password.setCustomValidity("");
+        //     }
+        // }
+
+        // localStorage.setItem("password", password);
+        // password.onchange = checkPassword;
+        // confirm_password.onkeyup = checkPassword;
+
+        // password confirmation script ends from here
+
+    </script>
+    
+</body>
+</html>
